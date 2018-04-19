@@ -32,7 +32,8 @@ cyndyApp.controller('manageImageCtrl', function ($scope, $state, $stateParams, a
                     type: 'success',
                     title: 'Image Updated',
                     text: dataResponse.data.message
-                })
+                });
+                $state.go('navigation.dashboard');
             }
             else {
                 swal({
