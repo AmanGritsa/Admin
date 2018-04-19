@@ -5,9 +5,9 @@ cyndyApp.controller('loginCtrl', function ($scope, $state, apiCall) {
              var user = {
             email: $scope.email,
             password: $scope.password,
-            userType: 'admin',
-            deviceToken: '42353',
-            deviceType: 'android'
+            userType: 'user',
+            deviceToken: '12345',
+            deviceType: 'ios'
         };
                localStorage.setItem('email', $scope.email);
         apiCall.getData('POST', 'login', user, '').then(function (dataResponse) {
