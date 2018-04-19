@@ -31,7 +31,7 @@
                         </a>
                         <div id="profileDropdown">
                         <ul class="dropdown-menu" >
-                            <li>
+                            <!-- <li>
                                 <a href="#">
                                     <i class="lnr lnr-user"></i>
                                     <span>My Profile</span>
@@ -42,9 +42,9 @@
                                     <i class="lnr lnr-cog"></i>
                                     <span>Settings</span>
                                 </a>
-                            </li>
+                            </li> -->
                             <li>
-                                <a href="#">
+                                <a ng-click="logout()">
                                     <i class="lnr lnr-exit"></i>
                                     <span>Logout</span>
                                 </a>
@@ -65,14 +65,14 @@
         <div class="sidebar-scroll">
             <nav>
                 <ul class="nav">
-                    <!-- <li>
-                        <a class="">
+                    <li>
+                        <a ng-click="goToManageUsers()" class={{selectUser}}>
                             <i class="lnr lnr-home"></i>
                             <span>Manage User</span>
                         </a>
-                    </li> -->
+                    </li>
                     <li>
-                        <a class="active">
+                        <a ng-click="goToManageRequest()" class={{selectImage}}>
                             <i class="lnr lnr-home"></i>
                             <span>Manage Request</span>
                         </a>

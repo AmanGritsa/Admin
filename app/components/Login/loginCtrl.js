@@ -5,9 +5,9 @@ cyndyApp.controller('loginCtrl', function ($scope, $state, apiCall) {
              var user = {
             email: $scope.email,
             password: $scope.password,
-            userType: 'user',
-            deviceToken: '12345',
-            deviceType: 'ios'
+            userType: 'admin',
+            deviceToken: '42353',
+            deviceType: 'android'
         };
                localStorage.setItem('email', $scope.email);
         apiCall.getData('POST', 'login', user, '').then(function (dataResponse) {
@@ -16,7 +16,7 @@ cyndyApp.controller('loginCtrl', function ($scope, $state, apiCall) {
                 localStorage.setItem('token', 'Mobulous ' + dataResponse.data.data.token);
                 localStorage.setItem('userType', dataResponse.data.data.userType);
                 if (dataResponse.data.data.userType == 'admin') {
-                    $state.go('navigation.dashboard');
+                    $state.go('navigation.manageUser');
                 }
                 else {
                     swal({

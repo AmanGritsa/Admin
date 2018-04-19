@@ -47,4 +47,14 @@ cyndyApp.config(function ($stateProvider, $urlRouterProvider) {
             }
         })
 
+        // Manage User
+        .state('navigation.manageUser', {
+            url: '/ManageUser',
+            templateUrl: 'app/components/Manage User/manageUser.html',
+            controller: 'manageUserCtrl',
+            // params: {
+            //     user: {}
+            // }
+        })
+
 });
