@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
     <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon.png">
-
+    
     <!-- CSS (load bootstrap) -->
     <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/sweet-alert.css">
@@ -19,22 +19,21 @@
             border-radius: 0;
         }
     </style>
-
-
+    
+    
     <script src="assets/vendor/jquery/jquery.min.js"></script>
-    <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-
-
-
+	<script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/jsPdf.min.js"></script>
+    
+    
 
     <!-- JS (load angular, ui-router, and our custom js file) -->
     <script src="assets/js/angular.min.js"></script>
     <script src="assets/js/ui-router.js"></script>
-    <script src="assets/js/sweet-alert.js"></script>
-    <script src="assets/js/jsPdf.min.js"></script>
+   <script src="assets/js/sweet-alert.js"></script>
     <script src="app/routes.js"></script>
     <script src="app/apiCall.js"></script>
-
+    
 </head>
 
 <!-- apply our angular app to our site -->
@@ -42,7 +41,7 @@
 <body ng-app="CyndyPorter">
 
     <!-- VENDOR CSS -->
-
+   
     <link rel="stylesheet" href="assets/vendor/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/vendor/linearicons/style.css">
 
@@ -51,18 +50,18 @@
 
     <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
-
+    
     <!-- MAIN CONTENT -->
 
-    <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
-    <div ui-view></div>
+        <!-- THIS IS WHERE WE WILL INJECT OUR CONTENT ============================== -->
+        <div ui-view></div>
 
 
     <!-- Javascript -->
 
-    <script src="assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
     <script src="assets/js/klorofil-common.js"></script>
-
+    
     <!-- Controllers -->
     <script src="app/components/Login/loginCtrl.js"></script>
     <script src="app/components/Dashboard/dashboardCtrl.js"></script>
