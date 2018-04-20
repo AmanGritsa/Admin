@@ -1,13 +1,15 @@
 cyndyApp.controller('navigationCtrl', function ($scope, $state) {
 
+    $scope.selectUser = true;
     $scope.goToManageUsers = function () {
         $scope.selectUser = true;
-
+        $scope.selectImage = false;
         $state.go('navigation.manageUser');
 
     }
     $scope.goToManageRequest = function () {
         $scope.selectImage = true;
+        $scope.selectUser = false;
         $state.go('navigation.dashboard');
 
     }
