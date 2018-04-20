@@ -8,9 +8,26 @@ cyndyApp.controller('manageImageCtrl', function ($scope, $state, $stateParams, a
     else {
         $scope.user = $stateParams.user;
     }
-
-
     $scope.submitImage = function () {
+
+        if(!$scope.hairColor){
+            $scope.hairColor = '#000000';
+        }
+        if(!$scope.skinColor){
+            $scope.skinColor = '#000000';
+        }
+        if(!$scope.eyeColor){
+            $scope.eyeColor = '#000000';
+        }
+        if(!$scope.lipsColor){
+            $scope.lipsColor = '#000000';
+        }
+        if(!$scope.metalsColor){
+            $scope.metalsColor = '#000000';
+        }
+        if(!$scope.dressColor){
+            $scope.dressColor = '#000000';
+        }
 
         var imageData = {
             styleId: $scope.user.styleId,
@@ -40,7 +57,7 @@ cyndyApp.controller('manageImageCtrl', function ($scope, $state, $stateParams, a
                     type: 'error',
                     title: 'Oops...',
                     text: dataResponse.data.message
-                  })
+                })
             }
         });
 
