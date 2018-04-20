@@ -26,7 +26,7 @@
         
                         <div class="form-input">
                             <a>
-                                <input type="submit" value="Login" ng-click="login(userForm.$valid)" class="inp-our-btn" >
+                                <input type="submit" value="Login" ng-keyup="$event.keyCode == 13 ? login(userForm.$valid) : null" ng-click="login(userForm.$valid)" class="inp-our-btn" >
                             </a>
                         </div>
                     </div>
