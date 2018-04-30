@@ -153,12 +153,12 @@ cyndyApp.controller('manageImageCtrl', function ($scope, $state, $stateParams, a
         }
         image.src = $scope.user.imageUrl;
 
-        $scope.clockwise = function () {
+        $scope.rotateRight = function () {
             angleInDegrees += 90;
             drawRotated(angleInDegrees);
         };
 
-        $scope.counterclockwise = function () {
+        $scope.rotateLeft = function () {
             angleInDegrees -= 90;
             drawRotated(angleInDegrees);
         };
