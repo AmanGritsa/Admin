@@ -39,6 +39,8 @@ cyndyApp.controller('dashboardCtrl', function ($scope, $state, apiCall, $statePa
 
         $scope.downloadPdf = function (user) {
             var pdf = new jsPDF();
+            var width = pdf.internal.pageSize.width;
+            var height = pdf.internal.pageSize.height;
             var img = new Image;
             img.onload = function () {
                 pdf.text(20, 20, 'User Name :');
@@ -50,8 +52,8 @@ cyndyApp.controller('dashboardCtrl', function ($scope, $state, apiCall, $statePa
                 pdf.text(20, 50, 'Stylist Name :');
                 pdf.text(60, 50, user.stylistName);
                 pdf.text(20, 70, 'User Image');
-                pdf.addImage(this, 20, 80);
-                pdf.save("test.pdf");
+                pdf.addImage(this, 'JPEG', 20, 100, 180, 150);
+                pdf.save("report.pdf");
             };
             img.crossOrigin = "";  // for demo as we are at different origin than image
             img.src = user.imageUrl;
