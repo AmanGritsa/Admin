@@ -1851,6 +1851,13 @@ ul.activity-timeline > li {
     border-bottom: none;
 }
 
+.loader-img {
+  left: 55%;
+  width: 3%;
+  top: 50%;
+  position: absolute;
+}
+
 
 .manage-request-view-d{
     margin-bottom: 20px;

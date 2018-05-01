@@ -1,7 +1,8 @@
 cyndyApp.controller('dashboardCtrl', function ($scope, $state, apiCall, $stateParams) {
 
     var token = localStorage.getItem('token');
-
+    $scope.myLoader = true;
+   
     if (token == 'null') {
         $state.go('login');
     }
@@ -27,12 +28,9 @@ cyndyApp.controller('dashboardCtrl', function ($scope, $state, apiCall, $statePa
 
 
         apiCall.getData('POST', 'getUsersToManageImage', json, token).then(function (dataResponse) {
-
+            $scope.myLoader = false;
             if (dataResponse.data.status == 200) {
                 $scope.users = dataResponse.data.data;
-            }
-            else {
-                alert(dataResponse.data.message);
             }
         });
 

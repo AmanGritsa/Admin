@@ -1,6 +1,6 @@
 cyndyApp.controller('manageUserCtrl', function ($scope, $state, apiCall) {
     var token = localStorage.getItem('token');
-
+   $scope.myLoader = true;
     if (token == 'null') {
         $state.go('login');
     }
@@ -11,7 +11,7 @@ cyndyApp.controller('manageUserCtrl', function ($scope, $state, apiCall) {
         };
         $scope.users = [];
         apiCall.getData('POST', 'getAllUsers', json, token).then(function (dataResponse) {
-
+            $scope.myLoader = false;
             if (dataResponse.data.status == 200) {
                 $scope.users = dataResponse.data.data;
             }
