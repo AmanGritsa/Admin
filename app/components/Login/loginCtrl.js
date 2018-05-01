@@ -15,6 +15,7 @@ cyndyApp.controller('loginCtrl', function ($scope, $state, apiCall) {
             if (dataResponse.data.status == 200) {
                 localStorage.setItem('token', 'Mobulous ' + dataResponse.data.data.token);
                 localStorage.setItem('userType', dataResponse.data.data.userType);
+                localStorage.setItem('getActive', 'manageUser');
                 if (dataResponse.data.data.userType == 'admin') {
                     $state.go('navigation.manageUser');
                 }

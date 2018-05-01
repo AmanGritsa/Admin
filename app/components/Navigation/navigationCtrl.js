@@ -1,15 +1,16 @@
 cyndyApp.controller('navigationCtrl', function ($scope, $state) {
 
-    $scope.selectUser = true;
-    $scope.goToManageUsers = function () {
-        $scope.selectUser = true;
-        $scope.selectImage = false;
+    // $scope.selectUser = true;
+$scope.selectedTab = localStorage.getItem('getActive');
+    $scope.goToManageUsers = function (user) {
+        $scope.selectedTab = user;
+        localStorage.setItem('getActive', user);
         $state.go('navigation.manageUser');
 
     }
-    $scope.goToManageRequest = function () {
-        $scope.selectImage = true;
-        $scope.selectUser = false;
+    $scope.goToManageRequest = function (image) {
+        $scope.selectedTab = image;
+        localStorage.setItem('getActive', image);
         $state.go('navigation.dashboard');
 
     }

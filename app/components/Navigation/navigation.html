@@ -66,13 +66,13 @@
             <nav>
                 <ul class="nav">
                     <li>
-                        <a ng-click="goToManageUsers()" ng-class="{'active': selectUser}">
+                        <a ng-click="goToManageUsers('manageUser')" ng-class="{'active': selectedTab == 'manageUser'}">
                             <i class="lnr lnr-home"></i>
                             <span>Manage User</span>
                         </a>
                     </li>
                     <li>
-                        <a ng-click="goToManageRequest()" ng-class="{'active': selectImage}">
+                        <a ng-click="goToManageRequest('manageImage')" ng-class="{'active': selectedTab == 'manageImage'}">
                             <i class="lnr lnr-home"></i>
                             <span>Manage Request</span>
                         </a>
