@@ -27,10 +27,12 @@
                                 <th>Stylist Name</th>
                                 <th>PDF Reports</th>
                                 <th>Action</th>
+                                <th>Uploaded At</th>
+                                <th>Updated At</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr ng-repeat="user in users">
+                            <tr ng-repeat="user in users | orderBy: '-updateAt'">
                                 <td>{{user.userName}}</td>
                                 <td>{{user.email}}</td>
                                 <td>{{user.phoneNumber}}</td>
@@ -42,6 +44,8 @@
                                     <a class="view-btn" ng-click="viewDetail(user)">View Details</a>&nbsp;
                                     <!-- <a class="edit-btn" ng-click="manageImage(user)">Edit</a> -->
                                 </td>
+                                <td>{{user.uploadedAt}}</td>
+                                <td>{{user.updatedAt}}</td>
                             </tr>
                             
                         </tbody>

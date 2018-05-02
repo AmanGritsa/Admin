@@ -1,4 +1,3 @@
-var cyndyApp = angular.module('CyndyPorter', ['ui.router']);
 
 cyndyApp.config(function ($stateProvider, $urlRouterProvider) {
 

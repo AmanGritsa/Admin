@@ -1,4 +1,4 @@
-cyndyApp.controller('completeRequestCtrl', function ($scope, $state, apiCall, $stateParams) {
+cyndyApp.controller('completeRequestCtrl', function ($scope, $rootScope, $state, apiCall, $stateParams) {
 
     var token = localStorage.getItem('token');
     $scope.myLoader = true;
@@ -22,7 +22,13 @@ cyndyApp.controller('completeRequestCtrl', function ($scope, $state, apiCall, $s
         apiCall.getData('POST', 'getCompleteRequest', json, token).then(function (dataResponse) {
             $scope.myLoader = false;
             if (dataResponse.data.status == 200) {
+                
                 $scope.users = dataResponse.data.data;
+                $scope.users.filter(function(json){
+                    json.uploadedAt = $rootScope.getConvertedDate(json.uploadAt);
+                    json.updatedAt = $rootScope.getConvertedDate(json.updateAt);
+                })
+                // $scope.users.uploadAt = $rootScope.getConvertedDate(dataResponse.data.data.uploadAt);
             }
         });
 
