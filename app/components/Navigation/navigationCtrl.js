@@ -8,10 +8,18 @@ $scope.selectedTab = localStorage.getItem('getActive');
         $state.go('navigation.manageUser');
 
     }
-    $scope.goToManageRequest = function (image) {
-        $scope.selectedTab = image;
-        localStorage.setItem('getActive', image);
-        $state.go('navigation.dashboard');
+    
+
+    $scope.goToPendingRequest = function (pending) {
+        $scope.selectedTab = pending;
+        localStorage.setItem('getActive', pending);
+        $state.go('navigation.pendingRequest');
+
+    }
+    $scope.goToCompleteRequest = function (complete) {
+        $scope.selectedTab = complete;
+        localStorage.setItem('getActive', complete);
+        $state.go('navigation.completeRequest');
 
     }
 
@@ -31,6 +39,12 @@ $scope.selectedTab = localStorage.getItem('getActive');
     $(document).ready(function () {
         $('.btn-toggle-fullwidth').click(function () {
             $('body').toggleClass('layout-fullwidth')
+        })
+    })
+
+    $(document).ready(function () {
+        $('.collapsed').click(function () {
+            $('.collapse').slideToggle()
         })
     })
 

@@ -72,20 +72,14 @@
                         </a>
                     </li>
                     <li>
-                        <a ng-click="goToManageRequest('manageImage')" ng-class="{'active': selectedTab == 'manageImage'}">
-                            <i class="lnr lnr-home"></i>
-                            <span>Manage Request</span>
-                        </a>
+                        <a data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>Manage Request</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>  
+                        <div id="subPages" class="collapse">
+                            <ul class="nav">
+                                <li><a ng-click="goToPendingRequest('pending')" ng-class="{'active': selectedTab == 'pending'}">Pending Request</a></li>
+                                <li><a ng-click="goToCompleteRequest('complete')" ng-class="{'active': selectedTab == 'complete'}">Complete Request</a></li>
+                            </ul>
+                        </div>
                     </li>
-                    <!--<li>
-							<a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>Manage Request</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
-							<div id="subPages" class="collapse ">
-								<ul class="nav">
-									<li><a href="#" class="">Profile</a></li>
-									<li><a href="#" class="">Login</a></li>
-								</ul>
-							</div>
-						</li>-->
                 </ul>
             </nav>
         </div>

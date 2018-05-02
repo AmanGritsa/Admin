@@ -1,0 +1,59 @@
+<div ng-show="myLoader">
+    <div>
+        <img class="loader-img" src="assets/img/loader.gif" />
+    </div>
+</div>
+
+<!-- WRAPPER -->
+<div id="wrapper" ng-hide="myLoader">
+
+<!-- MAIN -->
+<div class="main">
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+        <div class="container-fluid">
+            <!-- OVERVIEW -->
+            <div class="panels">
+                <div class="panels-hading">
+                    <h4>Pending Request</h4>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email ID</th>
+                                <th>Phone No.</th>
+                                <th>Stylist Name</th>
+                                <!-- <th>PDF Reports</th> -->
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="user in users">
+                                <td>{{user.userName}}</td>
+                                <td>{{user.email}}</td>
+                                <td>{{user.phoneNumber}}</td>
+                                <td>{{user.stylistName}}</td>
+                                <!-- <td>
+                                    <img src="assets/img/pdf.png" class="img-responsive pdf-download-img" ng-click="downloadPdf(user)">
+                                </td> -->
+                                <td>
+                                    <a class="view-btn" ng-click="viewDetail(user)">View Details</a>&nbsp;
+                                    <a class="edit-btn" ng-click="manageImage(user)">Edit</a>
+                                    <a ng-click="downloadImage(user.imageUrl)"><img src="assets/img/download-image.png" class="" style="height: 60%;margin-left: 3%"></a>
+                                </td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- END MAIN CONTENT -->
+</div>
+<!-- END MAIN -->
+
+</div>

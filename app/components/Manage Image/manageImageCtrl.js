@@ -4,7 +4,7 @@ cyndyApp.controller('manageImageCtrl', function ($scope, $state, $stateParams, a
 
     // $scope.myLoader = true;
     if (!$stateParams.user.email) {
-        $state.go('navigation.dashboard');
+        $state.go('navigation.pendingRequest');
     }
     else {
         $scope.user = $stateParams.user;
@@ -214,7 +214,7 @@ cyndyApp.controller('manageImageCtrl', function ($scope, $state, $stateParams, a
                     title: 'Image Updated',
                     text: dataResponse.data.message
                 });
-                $state.go('navigation.dashboard');
+                $state.go('navigation.pendingRequest');
             }
             else {
                 swal({

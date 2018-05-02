@@ -20,11 +20,18 @@ cyndyApp.config(function ($stateProvider, $urlRouterProvider) {
              controller: 'navigationCtrl'
         })
 
-        // Dashboard State =================================
-        .state('navigation.dashboard', {
-            url: '/dashboard',
-            templateUrl: 'app/components/Dashboard/dashboard.html',
-            controller: 'dashboardCtrl'
+        // Pending Request =================================
+        .state('navigation.pendingRequest', {
+            url: '/pendingRequest',
+            templateUrl: 'app/components/Request/Pending/pendingRequest.html',
+            controller: 'pendingRequestCtrl'
+        })
+
+        // Complete Request =================================
+        .state('navigation.completeRequest', {
+            url: '/completeRequest',
+            templateUrl: 'app/components/Request/Complete/completeRequest.html',
+            controller: 'completeRequestCtrl'
         })
 
         // Manage Image
