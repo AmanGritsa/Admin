@@ -16,7 +16,7 @@ cyndyApp.controller('pendingRequestCtrl', function ($scope, $state, apiCall, $ht
             params = {
                 'user': userData
             }
-            $state.go('navigation.viewDetails', params);
+            $state.go('navigation.viewPendingDetails', params);
         };
 
         $scope.manageImage = function (userData) {

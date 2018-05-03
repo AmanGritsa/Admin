@@ -1,14 +1,13 @@
 cyndyApp.controller('navigationCtrl', function ($scope, $state) {
 
     // $scope.selectUser = true;
-$scope.selectedTab = localStorage.getItem('getActive');
+    $scope.selectedTab = localStorage.getItem('getActive');
     $scope.goToManageUsers = function (user) {
         $scope.selectedTab = user;
         localStorage.setItem('getActive', user);
         $state.go('navigation.manageUser');
 
     }
-    
 
     $scope.goToPendingRequest = function (pending) {
         $scope.selectedTab = pending;
@@ -21,6 +20,11 @@ $scope.selectedTab = localStorage.getItem('getActive');
         localStorage.setItem('getActive', complete);
         $state.go('navigation.completeRequest');
 
+    }
+
+    $scope.goToAddStylist = function () {
+        localStorage.setItem('getActive', null);
+        $state.go('navigation.addStylist');
     }
 
     $scope.logout = function () {

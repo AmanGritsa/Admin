@@ -19,6 +19,13 @@ cyndyApp.config(function ($stateProvider, $urlRouterProvider) {
              controller: 'navigationCtrl'
         })
 
+        // Add Stylist =================================
+        .state('navigation.addStylist', {
+            url: '/addStylist',
+            templateUrl: 'app/components/AddStylist/addStylist.html',
+            controller: 'addStylistCtrl'
+        })
+        
         // Pending Request =================================
         .state('navigation.pendingRequest', {
             url: '/pendingRequest',
@@ -43,10 +50,20 @@ cyndyApp.config(function ($stateProvider, $urlRouterProvider) {
             }
         })
 
-        // View Details
-        .state('navigation.viewDetails', {
+        // View completet request details
+        .state('navigation.viewCompleteDetails', {
             url: '/ViewDetails',
-            templateUrl: 'app/components/View Details/viewDetails.html',
+            templateUrl: 'app/components/View Details/viewCompleteDetails.html',
+            controller: 'viewDetailsCtrl',
+            params: {
+                user: {}
+            }
+        })
+
+        // view pending request details
+        .state('navigation.viewPendingDetails', {
+            url: '/ViewDetails',
+            templateUrl: 'app/components/View Details/viewPendingDetails.html',
             controller: 'viewDetailsCtrl',
             params: {
                 user: {}

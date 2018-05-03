@@ -16,7 +16,7 @@ cyndyApp.controller('completeRequestCtrl', function ($scope, $rootScope, $state,
             params = {
                 'user': userData
             }
-            $state.go('navigation.viewDetails', params);
+            $state.go('navigation.viewCompleteDetails', params);
         };
 
         apiCall.getData('POST', 'getCompleteRequest', json, token).then(function (dataResponse) {

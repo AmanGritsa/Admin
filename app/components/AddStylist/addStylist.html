@@ -1,0 +1,67 @@
+<!-- WRAPPER -->
+<style>
+    .login-box {
+        background: #fff;
+        width: 60%;
+        padding: 50px 50px;
+        border-radius: 6px;
+        margin: 0 auto;
+    }
+</style>
+<div id="wrapper" ng-hide="myLoader">
+    <!-- MAIN -->
+    <div class="main">
+        <!-- MAIN CONTENT -->
+        <div class="main-content">
+            <div class="container-fluid">
+                <!-- OVERVIEW -->
+                <!-- WRAPPER -->
+                <div id="wrapper">
+                    <!-- NAVBAR -->
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 formsec1">
+                        <div class="row">
+                            <div class="login-section">
+                                <div class="login-box">
+                                    <div class="login-logo">
+                                        <h2>Add Stylist</h2>
+                                        <!-- <img src="assets/img/logo-dark.png" class="img-responsive center-block"> -->
+                                    </div>
+                                    <form name="stylistForm" novalidate>
+                                        <div class="login-section">
+                                            <div class="form-input">
+                                                <label class="form-label">Name</label>
+                                                <input type="text" name="stylistName" placeholder="Stylist Name" class="inp-our" ng-model="stylistName" required>
+                                                <p ng-show="stylistForm.stylistName.$invalid && !stylistForm.stylistName.$pristine" class="help-block">Name is required.</p>
+                                            </div>
+                                            <div class="form-input">
+                                                <label class="form-label">Email ID</label>
+                                                <input type="email" name="email" placeholder="Email ID" class="form-control inp-our" ng-model="email" required>
+                                                <p ng-show="stylistForm.email.$invalid && !stylistForm.email.$pristine" class="help-block">Email is required.</p>
+                                            </div>
+                                            <div class="form-input">
+                                                <label class="form-label">Phone Number</label>
+                                                <input type="text" name="stylistPhone" placeholder="Phone Number" class="inp-our" ng-model="stylistPhone" required>
+                                                <p ng-show="stylistForm.stylistPhone.$invalid && !stylistForm.stylistPhone.$pristine" class="help-block">Phone Number is required.</p>
+                                            </div>
+
+                                            <div class="form-input">
+                                                <a>
+                                                    <input type="submit" class="inp-our-btn" ng-click="addStylist(stylistForm.$valid)">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- END MAIN CONTENT -->
+    </div>
+    <!-- END MAIN -->
+
+</div>
+<!-- END WRAPPER -->
