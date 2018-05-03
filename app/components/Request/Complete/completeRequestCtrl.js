@@ -1,12 +1,13 @@
 cyndyApp.controller('completeRequestCtrl', function ($scope, $rootScope, $state, apiCall, $stateParams) {
 
     var token = localStorage.getItem('token');
-    $scope.myLoader = true;
+    
 
     if (token == 'null') {
         $state.go('login');
     }
     else {
+        $scope.myLoader = true;
         var userType = localStorage.getItem('userType');
         var json = {
             userType: userType

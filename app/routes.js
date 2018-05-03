@@ -52,19 +52,19 @@ cyndyApp.config(function ($stateProvider, $urlRouterProvider) {
 
         // View completet request details
         .state('navigation.viewCompleteDetails', {
-            url: '/ViewDetails',
+            url: '/ViewCompleteDetails',
             templateUrl: 'app/components/View Details/viewCompleteDetails.html',
-            controller: 'viewDetailsCtrl',
+            controller: 'viewCompleteDetailsCtrl',
             params: {
                 user: {}
             }
         })
-
+        
         // view pending request details
         .state('navigation.viewPendingDetails', {
-            url: '/ViewDetails',
+            url: '/ViewPendingDetails',
             templateUrl: 'app/components/View Details/viewPendingDetails.html',
-            controller: 'viewDetailsCtrl',
+            controller: 'viewPendingDetailsCtrl',
             params: {
                 user: {}
             }
