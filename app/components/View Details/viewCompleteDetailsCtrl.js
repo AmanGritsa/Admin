@@ -17,7 +17,6 @@ cyndyApp.controller('viewCompleteDetailsCtrl', function ($scope, $state, $stateP
                 $scope.user = dataResponse.data.data;
             }
         });
-
     }
 
 });
