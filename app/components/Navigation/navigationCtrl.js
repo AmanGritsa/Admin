@@ -23,9 +23,10 @@ cyndyApp.controller('navigationCtrl', function ($scope, $state) {
 
     }
 
-    $scope.goToAddStylist = function () {
-        localStorage.setItem('getActive', null);
-        $state.go('navigation.addStylist');
+    $scope.goToManageStylist = function(stylist){
+        $scope.selectedTab = stylist;
+        localStorage.setItem('getActive', stylist);
+        $state.go('navigation.stylistList');
     }
 
     $scope.logout = function () {

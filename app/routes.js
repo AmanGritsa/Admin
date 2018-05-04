@@ -22,8 +22,15 @@ cyndyApp.config(function ($stateProvider, $urlRouterProvider) {
         // Add Stylist =================================
         .state('navigation.addStylist', {
             url: '/addStylist',
-            templateUrl: 'app/components/AddStylist/addStylist.html',
+            templateUrl: 'app/components/Stylist/Add Stylist/addStylist.html',
             controller: 'addStylistCtrl'
+        })
+
+        // Remove Stylist =================================
+        .state('navigation.stylistList', {
+            url: '/stylistList',
+            templateUrl: 'app/components/Stylist/Stylist List/stylistList.html',
+            controller: 'stylistListCtrl'
         })
         
         // Pending Request =================================

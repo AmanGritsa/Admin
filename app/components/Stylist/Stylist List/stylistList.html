@@ -1,0 +1,59 @@
+<div ng-show="myLoader">
+    <div>
+        <img class="loader-img" src="assets/img/loader.gif" />
+    </div>
+</div>
+
+<!-- WRAPPER -->
+<div id="wrapper" ng-hide="myLoader">
+
+    <!-- MAIN -->
+    <div class="main">
+        <!-- MAIN CONTENT -->
+        <div class="main-content">
+            <div class="container-fluid">
+                <!-- OVERVIEW -->
+                <div class="panels" style="overflow: hidden;">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 panels-hading">
+                        <h4 class="pull-left">Stylists List</h4>
+                        <a class="view-btn" style="display:block; float:right;" ng-click="goToAddStylist()">Add Stylist</a>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Email ID</th>
+                                        <th>Phone No.</th>
+                                        <!-- <th>Stylist Name</th> -->
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr ng-repeat="user in users">
+                                        <td>{{user.name}}</td>
+                                        <td>{{user.email}}</td>
+                                        <td>{{user.phoneNumber}}</td>
+
+                                        <td>
+                                            <!-- <a class="view-btn" ng-click="viewDetail(user)">View Details</a>&nbsp;
+                                        <a class="edit-btn" ng-click="manageImage(user)">Edit</a> -->
+                                            <a ng-click="deleteStylist()">
+                                                <img src="assets/img/delete.png" class="" style="height: 17%;margin-left: 3%">
+                                            </a>
+                                        </td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END MAIN CONTENT -->
+    </div>
+    <!-- END MAIN -->
+
+</div>
