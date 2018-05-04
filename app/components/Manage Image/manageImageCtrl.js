@@ -32,7 +32,7 @@ cyndyApp.controller('manageImageCtrl', function ($scope, $state, $stateParams, a
         }
 
         // $scope.myLoader = false;
-        
+
         $scope.rotateRight = function () {
             angleInDegrees += 90;
             drawRotated(angleInDegrees);
@@ -140,11 +140,11 @@ cyndyApp.controller('manageImageCtrl', function ($scope, $state, $stateParams, a
 
     };
     $scope.addWows = function () {
-        if ($scope.wows.length >= 5) {
+        if ($scope.wows.length >= 10) {
             swal({
                 type: 'error',
                 title: 'Oops...',
-                text: "You can't add more than 5 colors!"
+                text: "You can't add more than 10 colors!"
             });
         }
         else {

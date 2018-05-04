@@ -25,8 +25,8 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="assets/img/user.png" class="img-circle" alt="Avatar">
-                            <span>Samuel</span>
+                            <img src="assets/img/test.png" class="img-circle" alt="Avatar">
+                            <span>{{userName}}</span>
                             <i class="icon-submenu lnr lnr-chevron-down"></i>
                         </a>
                         <div id="profileDropdown">
@@ -68,15 +68,15 @@
                     <li>
                         <a ng-click="goToManageUsers('manageUser')" ng-class="{'active': selectedTab == 'manageUser'}">
                             <i class="lnr lnr-home"></i>
-                            <span>Manage User</span>
+                            <span>Manage Users</span>
                         </a>
                     </li>
                     <li>
-                        <a data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>Manage Request</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>  
+                        <a data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>Manage Requests</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>  
                         <div id="subPages" class="collapse">
                             <ul class="nav">
-                                <li><a ng-click="goToPendingRequest('pending')" ng-class="{'active': selectedTab == 'pending'}">Pending Request</a></li>
-                                <li><a ng-click="goToCompleteRequest('complete')" ng-class="{'active': selectedTab == 'complete'}">Complete Request</a></li>
+                                <li><a ng-click="goToPendingRequest('pending')" ng-class="{'active': selectedTab == 'pending'}">Pending Requests</a></li>
+                                <li><a ng-click="goToCompleteRequest('complete')" ng-class="{'active': selectedTab == 'complete'}">Completed Requests</a></li>
                             </ul>
                         </div>
                     </li>

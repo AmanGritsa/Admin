@@ -2,6 +2,7 @@ cyndyApp.controller('navigationCtrl', function ($scope, $state) {
 
     // $scope.selectUser = true;
     $scope.selectedTab = localStorage.getItem('getActive');
+    $scope.userName = localStorage.getItem('userName');
     $scope.goToManageUsers = function (user) {
         $scope.selectedTab = user;
         localStorage.setItem('getActive', user);
