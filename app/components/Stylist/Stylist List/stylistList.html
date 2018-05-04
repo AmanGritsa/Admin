@@ -31,15 +31,15 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr ng-repeat="user in users">
-                                        <td>{{user.name}}</td>
-                                        <td>{{user.email}}</td>
-                                        <td>{{user.phoneNumber}}</td>
+                                    <tr ng-repeat="stylist in stylists">
+                                        <td>{{stylist.name}}</td>
+                                        <td>{{stylist.email}}</td>
+                                        <td>{{stylist.phoneNumber}}</td>
 
                                         <td>
                                             <!-- <a class="view-btn" ng-click="viewDetail(user)">View Details</a>&nbsp;
                                         <a class="edit-btn" ng-click="manageImage(user)">Edit</a> -->
-                                            <a ng-click="deleteStylist()">
+                                            <a ng-click="deleteStylist(stylist.email, $index)">
                                                 <img src="assets/img/delete.png" class="" style="height: 17%;margin-left: 3%">
                                             </a>
                                         </td>
