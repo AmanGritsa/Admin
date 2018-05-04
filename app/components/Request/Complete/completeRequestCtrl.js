@@ -1,7 +1,7 @@
 cyndyApp.controller('completeRequestCtrl', function ($scope, $rootScope, $state, apiCall, $stateParams) {
 
     var token = localStorage.getItem('token');
-    
+
 
     if (token == 'null') {
         $state.go('login');
@@ -23,9 +23,9 @@ cyndyApp.controller('completeRequestCtrl', function ($scope, $rootScope, $state,
         apiCall.getData('POST', 'getCompleteRequest', json, token).then(function (dataResponse) {
             $scope.myLoader = false;
             if (dataResponse.data.status == 200) {
-                
+
                 $scope.users = dataResponse.data.data;
-                $scope.users.filter(function(json){
+                $scope.users.filter(function (json) {
                     json.uploadedAt = $rootScope.getConvertedDate(json.uploadAt);
                     json.updatedAt = $rootScope.getConvertedDate(json.updateAt);
                 })
@@ -34,6 +34,7 @@ cyndyApp.controller('completeRequestCtrl', function ($scope, $rootScope, $state,
         });
 
 
+        // download pdf report
         $scope.downloadPdf = function (user) {
             var pdf = new jsPDF();
             var width = pdf.internal.pageSize.width;
@@ -55,6 +56,34 @@ cyndyApp.controller('completeRequestCtrl', function ($scope, $rootScope, $state,
             img.crossOrigin = "";  // for demo as we are at different origin than image
             img.src = user.imageUrl;
 
+        };
+
+
+        // delete request
+        $scope.deleteRequest = function (user) {
+            var json = {
+                styleId: user.styleId
+            };
+            apiCall.getData('DELETE', 'deleteRequest', json, token).then(function (dataResponse) {
+
+                var index = $scope.users.indexOf(user);
+
+                if (dataResponse.data.status == 200) {
+                    swal({
+                        type: 'success',
+                        title: 'Request Removed',
+                        text: 'Request successfully deleted'
+                    });
+                    $scope.users.splice(index, 1);
+                }
+                else {
+                    swal({
+                        type: 'error',
+                        title: 'Oops...',
+                        text: dataResponse.data.message
+                    });
+                }
+            });
         }
     }
 
