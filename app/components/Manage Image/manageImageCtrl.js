@@ -152,11 +152,11 @@ cyndyApp.controller('manageImageCtrl', function ($scope, $state, $stateParams, a
         }
     };
     $scope.addAccents = function () {
-        if ($scope.accents.length >= 10) {
+        if ($scope.accents.length >= 3) {
             swal({
                 type: 'error',
                 title: 'Oops...',
-                text: "You can't add more than 10 colors!"
+                text: "You can't add more than 3 colors!"
             });
         }
         else {

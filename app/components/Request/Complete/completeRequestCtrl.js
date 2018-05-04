@@ -1,8 +1,6 @@
 cyndyApp.controller('completeRequestCtrl', function ($scope, $rootScope, $state, apiCall, $stateParams) {
 
     var token = localStorage.getItem('token');
-
-
     if (token == 'null') {
         $state.go('login');
     }
@@ -55,7 +53,6 @@ cyndyApp.controller('completeRequestCtrl', function ($scope, $rootScope, $state,
             };
             img.crossOrigin = "";  // for demo as we are at different origin than image
             img.src = user.imageUrl;
-
         };
 
 
