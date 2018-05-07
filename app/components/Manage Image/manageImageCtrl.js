@@ -202,7 +202,8 @@ cyndyApp.controller('manageImageCtrl', function ($scope, $state, $stateParams, a
                 wow: $scope.wowValues,
                 accent: $scope.accentValues,
                 avoids: $scope.avoidValues
-            }
+            },
+            deviceToken: $scope.user.deviceToken
         };
         console.log(imageData);
 

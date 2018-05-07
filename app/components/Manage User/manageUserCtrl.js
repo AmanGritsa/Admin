@@ -38,6 +38,7 @@ cyndyApp.controller('manageUserCtrl', function ($scope, $state, apiCall) {
                 var json = {
                     userType: userType,
                     email: user.email,
+                    deviceToken: user.deviceToken,
                     message: val
                 };
                 apiCall.getData('POST', 'sendMessageToUser', json, token).then(function (dataResponse) {
@@ -45,7 +46,7 @@ cyndyApp.controller('manageUserCtrl', function ($scope, $state, apiCall) {
                         swal("Sent!", "Your message has been sent to " + user.userName, "success");
                     }
                     else {
-                        alert(dataResponse.data.message);
+                        swal("Failed!", dataResponse.data.message, "success");
                     }
                 });
 
